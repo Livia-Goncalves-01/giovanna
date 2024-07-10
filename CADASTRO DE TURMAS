@@ -1,76 +1,96 @@
+// Importando os pacotes principais do Flutter, que contêm widgets essenciais.
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+// Definindo uma classe StatelessWidget chamada CadastroTurmaPage.
 class CadastroTurmaPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  // Método build que descreve como construir a interface do usuário.
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      // Scaffold fornece uma estrutura básica de layout para a página.
+      appBar: AppBar(
+        // Definindo o título da AppBar.
         title: Text('CADASTRO TURMA'),
+        // Definindo a cor de fundo da AppBar.
         backgroundColor: Color.fromARGB(255, 189, 86, 209),
       ),
+      // Corpo da página com um SingleChildScrollView para permitir rolagem.
       body: SingleChildScrollView(
         child: Padding(
-          padding: Edgelnsets.all(16.0),
+          // Adicionando padding ao conteúdo.
+          padding: EdgeInsets.all(16.0), // Corrigindo o erro de digitação de Edgelnsets para EdgeInsets
           child: Column(
+            // Alinhando os filhos ao longo do eixo principal.
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children:<Widget>[
+            children: <Widget>[
+              // Campo de texto para o nome.
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Nome:',
+                  labelText: 'Nome:',
                 ),
               ),
+              // Campo de seleção suspensa para o tipo de dança.
               DropdownButtonFormField(
                 items: <DropdownMenuItem>[
                   DropdownMenuItem(
-                    child:Text('Jazz'),
-                    value:'Jazz',
+                    child: Text('Jazz'),
+                    value: 'Jazz',
                   ),
                 ],
-                onChanged:(value){},
+                onChanged: (value) {},
                 decoration: InputDecoration(
-                 labelText: 'Dança:', 
+                  labelText: 'Dança:', 
                 ),
               ),
+              // Campo de texto para o número de vagas.
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Vagas:',
+                  labelText: 'Vagas:',
                 ),
+                // Definindo o tipo de teclado para números.
                 keyboardType: TextInputType.number,
               ),
+              // Campo de texto para o dia.
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Dia:',
+                  labelText: 'Dia:',
                 ),
               ),
-               TextFormField(
-                decoration: InputDecoration(
-                  labelText:'Horário:',
-                ),
-            keyboardType: TextInputType.datetime,
-              ),
+              // Campo de texto para o horário.
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Observações:',
+                  labelText: 'Horário:',
+                ),
+                // Definindo o tipo de teclado para data e hora.
+                keyboardType: TextInputType.datetime,
+              ),
+              // Campo de texto para observações com até 3 linhas.
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Observações:',
                 ),
                 maxLines: 3,
               ),
+              // Campo de texto para o nome do professor.
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Professor:',
+                  labelText: 'Professor:',
                 ),
               ),
+              // Botão para submeter o formulário.
               ElevatedButton(
-                onPressed: (){},
+                onPressed: () {},
                 child: Text('Cadastrar Aluno'),
                 style: ElevatedButton.styleFrom(
+                  // Definindo a cor de fundo do botão.
                   primary: Color.fromARGB(255, 205, 79, 255),
                 ),
               ),
             ],
           ),
-          ),
         ),
       ),
+    );
   }
 }
