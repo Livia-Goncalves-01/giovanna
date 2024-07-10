@@ -1,73 +1,87 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // Importa a biblioteca principal do Flutter
 
 class CadastroEventosPage extends StatelessWidget {
-    @override
- Widget build(BuildContext context){
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      // Scaffold fornece a estrutura básica para a página
+      appBar: AppBar(
+        // Define a barra de app com um título e uma cor de fundo
         title: Text('CADASTRO EVENTOS'),
         backgroundColor: Color.fromARGB(255, 166, 58, 185),
       ),
       body: SingleChildScrollView(
+        // Permite que o conteúdo role se for muito longo para caber na tela
         child: Padding(
+          // Adiciona um padding ao redor do conteúdo
           padding: Edgelnsets.all(16.0),
           child: Column(
+            // Alinha os filhos ao longo do eixo principal
             crossAxisAlignment: CrossAxisAlignment.stretch,
-             children:<Widget>[
+            children: <Widget>[
+              // Campo de texto para o nome completo
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Nome Completo:',
+                  labelText: 'Nome Completo:',
                 ),
               ),
-             TextFormField(
+              // Campo de texto para o telefone
+              TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Telefone:',
+                  labelText: 'Telefone:',
                 ),
                 keyboardType: TextInputType.phone,
               ),
-                 TextFormField(
-                decoration: InputDecoration(
-                  labelText:'Turma:',
-                ),
-              ),
-                TextFormField(
-                decoration: InputDecoration(
-                  labelText:'Professor:',
-                ),
-              ),
+              // Campo de texto para a turma
               TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Local:',
+                  labelText: 'Turma:',
                 ),
               ),
-               TextFormField(
+              // Campo de texto para o professor
+              TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Cidade:',
+                  labelText: 'Professor:',
                 ),
               ),
-               TextFormField(
+              // Campo de texto para o local
+              TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Horário:',
+                  labelText: 'Local:',
+                ),
+              ),
+              // Campo de texto para a cidade
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Cidade:',
+                ),
+              ),
+              // Campo de texto para o horário
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Horário:',
                 ),
                 keyboardType: TextInputType.datetime,
               ),
-               TextFormField(
+              // Campo de texto para observações com até 3 linhas
+              TextFormField(
                 decoration: InputDecoration(
-                  labelText:'Observações:',
+                  labelText: 'Observações:',
                 ),
                 maxLines: 3,
               ),
-               ElevatedButton(
-                onPressed: (){},
+              // Botão para submeter o formulário
+              ElevatedButton(
+                onPressed: () {}, // Ação ao pressionar o botão
                 child: Text('Cadastrar Aluno'),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 249, 78, 255),
+                  primary: Color.fromARGB(255, 249, 78, 255), // Cor do botão
                 ),
               ),
-             ]
-          )
-        )
-      )
-    )
- }
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
