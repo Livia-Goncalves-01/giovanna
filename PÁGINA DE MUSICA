@@ -1,121 +1,124 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/material.dart'; // Importa a biblioteca principal do Flutter
+import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Importa a biblioteca de ícones FontAwesome
 
-class CadastroAlunoPage extends StatefulWidget {
+class CadastroAlunoPage extends StatefulWidget { // Define um StatefulWidget chamado CadastroAlunoPage
   @override 
-  _CadastroAlunoPageState createState()=> _ CadastroAlunoPageState():
+  _CadastroAlunoPageState createState() => _CadastroAlunoPageState(); // Cria o estado para este widget
 }
-class_CadastroAlunoPageState extends State<CadastroAlunoState>{
-  final_formKey = GlobalKey<FormState>(); 
 
-    @override 
-Widget build(BuildContext context){
-  Color primaryColor = Color.fromARGB(255, 246, 79, 252);
-  return Scaffold(
-appBar: AppBar(
-backgroundColor: Color.fromARGB(255, 241, 92, 255);
-title: Text('CADASTRO ALUNO'),
-),
-drawer: Drawer(
-  child: ListView(
-    padding: edgeInsets.zero,
-    children: <Widget>[
-      DrawerHeader(
-        decoration: BoxDecoration(
-          color: primaryColor<
-        ),
-        child: Column( 
-          mainAxisAlignment: MainAxisAlignment.end,
-          children:[
-            Text(
-              'Bem-vinda Lívia',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
+class _CadastroAlunoPageState extends State<CadastroAlunoPage> { // Define a classe de estado para CadastroAlunoPage
+  final _formKey = GlobalKey<FormState>(); // Define uma chave global para o formulário
+
+  @override 
+  Widget build(BuildContext context) { 
+    Color primaryColor = Color.fromARGB(255, 246, 79, 252); // Define a cor primária para o aplicativo
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 241, 92, 255), // Define a cor de fundo da AppBar
+        title: Text('CADASTRO ALUNO'), // Define o título da AppBar
+      ),
+      drawer: Drawer( // Adiciona um menu lateral (drawer)
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: primaryColor, // Define a cor de fundo do cabeçalho do drawer
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Bem-vinda Lívia', // Define o texto do cabeçalho do drawer
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ]
+            ListTile(
+              leading: Icon(FontAwesomeIcons.calendarCheck, color: primaryColor), // Define o ícone do item
+              title: Text('Eventos'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+            ListTile(
+              leading: Icon(FontAwesomeIcons.graduationCap, color: primaryColor), // Define o ícone do item
+              title: Text('Alunos'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+            ListTile(
+              leading: Icon(FontAwesomeIcons.chalkboardTeacher, color: primaryColor), // Define o ícone do item
+              title: Text('Professores'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+            ListTile(
+              leading: Icon(FontAwesomeIcons.peopleCarry, color: primaryColor), // Define o ícone do item
+              title: Text('Turmas'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications, color: primaryColor), // Define o ícone do item
+              title: Text('Notificações'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info, color: primaryColor), // Define o ícone do item
+              title: Text('Sobre'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: primaryColor), // Define o ícone do item
+              title: Text('Configurações'), // Define o texto do item
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer ao clicar no item
+              },
+            ),
+          ],
         ),
       ),
-      ListTile(
-        leading: Icon(FontAwesomeIcons.calendarCheck, color: primaryColor),
-        title: Text('Eventos'),
-        onTap: (){
-          Navigator.pop(context:)
-        },
-      ),
-      ListTile(
-    leading: Icon(FontAwesomeIcons.graduationCap, color: primaryColor),
-    title: Text('Alunos'),
-    onTap: (){
-      Navigator.pop(context);
-     },
-    ),
-    ListTile(
-      leading: Icon(FontAwesomeIcons.chalkboardTeacher, color: primaryColor),
-      title: Text('Professores'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-      ListTile(
-        leading (FontAwesomeIcons.peopleCarry, color: primaryColor)
-        title: Text('Turmas'),
-        onTap: (){
-        Navigator.pop(context);
-        },
-      ),
-      ListTile(
-      leading: Icon(Icons.notifications, color: primaryColor),
-      title: Text('Notificações'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-      ListTile(
-      leading: Icon(Icons.info, color: primaryColor),
-      title: Text('Sobre'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-      ListTile(
-      leading: Icon(Icons.settings, color: primaryColor),
-      title: Text('Configurações'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-   ],
-  ),
-),
-body: SingleChildScrollView( 
-  child: Form(
-    key:_formKey,
-    child:Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          TextFormField(S
-            decoration: InputDecoration(
-              labelText: 'Nome Completo:',
+      body: SingleChildScrollView( // Permite que o conteúdo role se for muito longo para caber na tela
+        child: Form(
+          key: _formKey, // Atribui a chave do formulário
+          child: Padding(
+            padding: const EdgeInsets.all(16.0), // Adiciona padding ao redor do formulário
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Nome Completo:', // Define o rótulo do campo de texto
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Outro Campo:', // Define o rótulo do campo de texto
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: TextFormField(
-                  decoration: I
-                )
-              )
-            ]
-          )
-        ]
-      )
-    ) 
-  )
-)
-)
-}
+        ),
+      ),
+    );
+  }
 }
