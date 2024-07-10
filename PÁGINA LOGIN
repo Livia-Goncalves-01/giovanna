@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart'; // Importando a biblioteca 
+
+class loginPage extends StatefulWidget{ // Criando a classe da página de Login
+@override
+_LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage>{
+  // Variáveis para e-mail e senha da tela de login
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+@override
+Widget build(BuildContext context){
+  return Scaffold( // criando a tela de login
+    body: SafeArea(child: Center(child: SingleChildScrollView(
+     padding: EdgeInsets.all(20.0) ,
+     child: Column(
+      mainAxisAlignment.Center,
+      children: <Widget>[
+        Text('Bem-vindo', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold)) // Texto de Bem vindo
+        SizedBox(height: 40.0),
+        TextField(
+        controller: emailController, // variável do email
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoretion(
+          hinText: 'Email',
+          prefixIcon: Icon(Icons.email),
+          border: OutlineInputBorder(),
+        )  
+        )
+        SizedBox(height: 20.0),
+        TextField(
+          controller: passwordCotroller, //variável da senha
+          obscureText: true,
+          decoration: InputDecoration(
+            hinText: Text: 'senha', //texto senha
+            prefixIcon: Icon(Icons.lock), //icone da senha
+            border: OutlineInputBorder(),
+          )
+        )
+        SizeBox(height: 40.0),
+        ElevatedButton.styleFrom( //botão de entrar
+          primary: Color.fromARGB(255, 209, 70, 252), //definindo a cor roxa
+          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), //tamanho do botão
+        ),
+       child: Text('Entrar'), // texto do botão
+      ]
+     )
+    )))
+  )
+
+}
+}
