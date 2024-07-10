@@ -1,0 +1,121 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class CadastroAlunoPage extends StatefulWidget {
+  @override 
+  _CadastroAlunoPageState createState()=> _ CadastroAlunoPageState():
+}
+class_CadastroAlunoPageState extends State<CadastroAlunoState>{
+  final_formKey = GlobalKey<FormState>(); 
+
+    @override 
+Widget build(BuildContext context){
+  Color primaryColor = Color.fromARGB(255, 246, 79, 252);
+  return Scaffold(
+appBar: AppBar(
+backgroundColor: Color.fromARGB(255, 241, 92, 255);
+title: Text('CADASTRO ALUNO'),
+),
+drawer: Drawer(
+  child: ListView(
+    padding: edgeInsets.zero,
+    children: <Widget>[
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color: primaryColor<
+        ),
+        child: Column( 
+          mainAxisAlignment: MainAxisAlignment.end,
+          children:[
+            Text(
+              'Bem-vinda Lívia',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
+            ),
+          ]
+        ),
+      ),
+      ListTile(
+        leading: Icon(FontAwesomeIcons.calendarCheck, color: primaryColor),
+        title: Text('Eventos'),
+        onTap: (){
+          Navigator.pop(context:)
+        },
+      ),
+      ListTile(
+    leading: Icon(FontAwesomeIcons.graduationCap, color: primaryColor),
+    title: Text('Alunos'),
+    onTap: (){
+      Navigator.pop(context);
+     },
+    ),
+    ListTile(
+      leading: Icon(FontAwesomeIcons.chalkboardTeacher, color: primaryColor),
+      title: Text('Professores'),
+      onTap: (){
+        Navigator.pop(context);
+      },
+      ),
+      ListTile(
+        leading (FontAwesomeIcons.peopleCarry, color: primaryColor)
+        title: Text('Turmas'),
+        onTap: (){
+        Navigator.pop(context);
+        },
+      ),
+      ListTile(
+      leading: Icon(Icons.notifications, color: primaryColor),
+      title: Text('Notificações'),
+      onTap: (){
+        Navigator.pop(context);
+      },
+      ),
+      ListTile(
+      leading: Icon(Icons.info, color: primaryColor),
+      title: Text('Sobre'),
+      onTap: (){
+        Navigator.pop(context);
+      },
+      ),
+      ListTile(
+      leading: Icon(Icons.settings, color: primaryColor),
+      title: Text('Configurações'),
+      onTap: (){
+        Navigator.pop(context);
+      },
+      ),
+   ],
+  ),
+),
+body: SingleChildScrollView( 
+  child: Form(
+    key:_formKey,
+    child:Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          TextFormField(S
+            decoration: InputDecoration(
+              labelText: 'Nome Completo:',
+            ),
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: TextFormField(
+                  decoration: I
+                )
+              )
+            ]
+          )
+        ]
+      )
+    ) 
+  )
+)
+)
+}
+}
