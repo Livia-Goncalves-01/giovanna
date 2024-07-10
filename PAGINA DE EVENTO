@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+
+class CadastroEventosPage extends StatelessWidget {
+    @override
+ Widget build(BuildContext context){
+    return Scaffold(
+      appBar:AppBar(
+        title: Text('CADASTRO EVENTOS'),
+        backgroundColor: Color.fromARGB(255, 166, 58, 185),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: Edgelnsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+             children:<Widget>[
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Nome Completo:',
+                ),
+              ),
+             TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Telefone:',
+                ),
+                keyboardType: TextInputType.phone,
+              ),
+                 TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Turma:',
+                ),
+              ),
+                TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Professor:',
+                ),
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Local:',
+                ),
+              ),
+               TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Cidade:',
+                ),
+              ),
+               TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Horário:',
+                ),
+                keyboardType: TextInputType.datetime,
+              ),
+               TextFormField(
+                decoration: InputDecoration(
+                  labelText:'Observações:',
+                ),
+                maxLines: 3,
+              ),
+               ElevatedButton(
+                onPressed: (){},
+                child: Text('Cadastrar Aluno'),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 249, 78, 255),
+                ),
+              ),
+             ]
+          )
+        )
+      )
+    )
+ }
+}
