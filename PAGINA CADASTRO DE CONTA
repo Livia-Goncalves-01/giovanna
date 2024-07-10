@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart'; // importa a biblioteca
+
+class SignupScreen extends StatefulWidget {  //chama a classe de logar
+  @override
+  signupScreenState createState() => _signupScreenState();
+}
+
+class _signupScreenState extends State<signupScreenState> {
+  final TextEditingController emailControlar =TextEditingController(); //variável do email
+  final TextEditingController passwordController = TextEditingController();///variável da senha
+  final TextEditingController confirmPasswordController = TextEditingController();///variável da senha
+  final TextEditingController userNameController = TextEditingController(); // /variável do nome
+
+  @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: SafeArea(
+      child: Center(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          MainAxisAlignment: MainAxisAlignment.center, //centralizando o app 
+          children: <Widget>[
+            Text(
+              'Cadrastro'
+              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+
+              SizeBox(height: 20.0),
+              TextField(
+                Controller: userNameController, // campo de nome do usuário
+                decoration: InputDecoration(
+                  hintText: 'Nome de Usuário', // Texto do nome
+                  prefixIcon: Icon(Icon.person),
+                  border:OutlineInputBorder()                 
+                )
+              )
+              SizedBox(heigth: 20.0),
+              TextField(
+                controller: emailController, //campo do email 
+                keyboardType.emailAddress,
+                decoretion: InputDecoration(
+                  hintText: 'E-mail',// texto do email
+                  prefixIcon: Icon(Icons.email),
+                  border: OutlineInputBorder(),
+                )
+              )
+              SizeBox(Height:20.0),
+              TextField(
+                controller: passwordController, // campo da senha
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Senha', // texto da senha
+                  prefixIcon: Icon(Icon.lock),
+                  border: OutlineInputBorder();
+                )
+              )
+              SizedBox(height: 20.0),
+              TextField(
+                Controller: confirmPasswordController, // campo para confirmar a senha
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Confirmar senha', // texto para confirmar a senha
+                  preixIcon: Icon(Icon.lock_outline),
+                  border: OutlineInputBorder(),
+                )
+              )
+              SizedBox(height: 40.0),
+              ElevatedButton() //chama o botão de cadastrar
+              onPressed: () {
+              
+              }
+              Style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(255, 210, 101, 231), // escolhendo a cor do botão
+                padding:EdgTnsets.symmetric(horizontal: 50, vertical: 20),
+              ),
+              child: Text('Cadastrar'),
+            )
+          ]
+        )
+      )
+      )
+    )
+  )
+}
+}
