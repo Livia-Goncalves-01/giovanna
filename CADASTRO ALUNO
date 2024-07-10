@@ -1,121 +1,146 @@
+// Importando o pacote principal do Flutter que contém os widgets essenciais.
 import 'package:flutter/material.dart';
+// Importando o pacote Font Awesome para usar ícones personalizados.
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// Definindo uma classe StatefulWidget chamada CadastroAlunoPage.
 class CadastroAlunoPage extends StatefulWidget {
   @override 
-  _CadastroAlunoPageState createState()=> _ CadastroAlunoPageState():
+  // Criando o estado associado a este widget.
+  _CadastroAlunoPageState createState() => _CadastroAlunoPageState();
 }
-class_CadastroAlunoPageState extends State<CadastroAlunoState>{
-  final_formKey = GlobalKey<FormState>(); 
 
-    @override 
-Widget build(BuildContext context){
-  Color primaryColor = Color.fromARGB(255, 246, 79, 252);
-  return Scaffold(
-appBar: AppBar(
-backgroundColor: Color.fromARGB(255, 241, 92, 255);
-title: Text('CADASTRO ALUNO'),
-),
-drawer: Drawer(
-  child: ListView(
-    padding: edgeInsets.zero,
-    children: <Widget>[
-      DrawerHeader(
-        decoration: BoxDecoration(
-          color: primaryColor<
-        ),
-        child: Column( 
-          mainAxisAlignment: MainAxisAlignment.end,
-          children:[
-            Text(
-              'Bem-vinda Lívia',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
+// Definindo a classe de estado para CadastroAlunoPage.
+class _CadastroAlunoPageState extends State<CadastroAlunoPage> {
+  // Definindo uma chave global para o formulário, que é usada para validar o formulário.
+  final _formKey = GlobalKey<FormState>(); 
+
+  @override 
+  // Método build que descreve como construir a interface do usuário.
+  Widget build(BuildContext context) {
+    // Definindo uma cor primária para usar em vários elementos.
+    Color primaryColor = Color.fromARGB(255, 246, 79, 252);
+    return Scaffold(
+      // Scaffold fornece uma estrutura básica de layout para a página.
+      appBar: AppBar(
+        // Definindo a cor de fundo da AppBar.
+        backgroundColor: Color.fromARGB(255, 241, 92, 255),
+        // Definindo o título da AppBar.
+        title: Text('CADASTRO ALUNO'),
+      ),
+      // Adicionando um drawer (menu lateral) à página.
+      drawer: Drawer(
+        child: ListView(
+          // Removendo o padding padrão.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              // Definindo a decoração do cabeçalho do drawer.
+              decoration: BoxDecoration(
+                color: primaryColor,
+              ),
+              child: Column( 
+                // Alinhando os filhos ao final do eixo principal.
+                mainAxisAlignment: MainAxisAlignment.end,
+                children:[
+                  Text(
+                    'Bem-vinda Lívia',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                ]
               ),
             ),
-          ]
+            // Definindo uma lista de itens no drawer, cada um com um ícone e um texto.
+            ListTile(
+              leading: Icon(FontAwesomeIcons.calendarCheck, color: primaryColor),
+              title: Text('Eventos'),
+              // Definindo a ação ao clicar no item.
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(FontAwesomeIcons.graduationCap, color: primaryColor),
+              title: Text('Alunos'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(FontAwesomeIcons.chalkboardTeacher, color: primaryColor),
+              title: Text('Professores'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(FontAwesomeIcons.peopleCarry, color: primaryColor),
+              title: Text('Turmas'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications, color: primaryColor),
+              title: Text('Notificações'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info, color: primaryColor),
+              title: Text('Sobre'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: primaryColor),
+              title: Text('Configurações'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
         ),
       ),
-      ListTile(
-        leading: Icon(FontAwesomeIcons.calendarCheck, color: primaryColor),
-        title: Text('Eventos'),
-        onTap: (){
-          Navigator.pop(context:)
-        },
-      ),
-      ListTile(
-    leading: Icon(FontAwesomeIcons.graduationCap, color: primaryColor),
-    title: Text('Alunos'),
-    onTap: (){
-      Navigator.pop(context);
-     },
-    ),
-    ListTile(
-      leading: Icon(FontAwesomeIcons.chalkboardTeacher, color: primaryColor),
-      title: Text('Professores'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-      ListTile(
-        leading (FontAwesomeIcons.peopleCarry, color: primaryColor)
-        title: Text('Turmas'),
-        onTap: (){
-        Navigator.pop(context);
-        },
-      ),
-      ListTile(
-      leading: Icon(Icons.notifications, color: primaryColor),
-      title: Text('Notificações'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-      ListTile(
-      leading: Icon(Icons.info, color: primaryColor),
-      title: Text('Sobre'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-      ListTile(
-      leading: Icon(Icons.settings, color: primaryColor),
-      title: Text('Configurações'),
-      onTap: (){
-        Navigator.pop(context);
-      },
-      ),
-   ],
-  ),
-),
-body: SingleChildScrollView( 
-  child: Form(
-    key:_formKey,
-    child:Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          TextFormField(S
-            decoration: InputDecoration(
-              labelText: 'Nome Completo:',
+      // Corpo da página com um formulário.
+      body: SingleChildScrollView( 
+        child: Form(
+          // Atribuindo a chave do formulário.
+          key: _formKey,
+          child: Padding(
+            // Adicionando padding ao formulário.
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              // Alinhando os filhos ao longo do eixo principal.
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                // Campo de texto para o nome completo.
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Nome Completo:',
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Outro Campo:', // Corrigindo um campo de decoração de entrada
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: TextFormField(
-                  decoration: I
-                )
-              )
-            ]
-          )
-        ]
-      )
-    ) 
-  )
-)
-)
-}
+        ),
+      ),
+    );
+  }
 }
